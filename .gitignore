@@ -1,41 +1,22 @@
-# Prerequisites
-*.d
+#include <bits/stdc++.h>
+using namespace std;
+int main () {
+int a,b;
+cin>>a>>b;
+vector <pair <int,int>> str(b);
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+for(int i = 0; i < b; i++){
+    cin>>str[i].first>>str[i].second;
+}
+sort(str.begin(),str.end());
+for(int i = 0; i < b; i++){
+    if(a>str[i].first){
+        a+=str[i].second;
+    }else {cout<<"NO"<<endl;
+    return 0;
+    }
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-# debug information files
-*.dwo
+}
+cout<<"YES";
+return 0;
+}
